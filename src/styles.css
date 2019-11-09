@@ -5,3 +5,16 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+.loader {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    z-index: 1000;
+}
+
+.link-no-style {
+    text-decoration: none;
+    color: black;
+}
