@@ -21,13 +21,15 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { from } from 'rxjs';
 import { LivroItemComponent } from './livro-item/livro-item.component';
 import { HomeComponent } from './home/home.component';
+import { CategoryBooksComponent } from './category-books/category-books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     LivroItemComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryBooksComponent
   ],
   imports: [
     BrowserModule,

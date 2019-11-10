@@ -33,4 +33,8 @@ export class AppComponent implements OnInit {
       }
     )
   }
+
+  getLink(categorie: Categories) {
+    return `category/${categorie.CategoryID}`
+  }
 }

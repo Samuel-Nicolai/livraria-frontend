@@ -14,4 +14,8 @@ export class BookService {
   getAleatoryBooks() {
     return this.http.get<Array<Book>>(`${Util.API_URL}books/aleatory`)
   }
+
+  getBookCategory(id: string) {
+    return this.http.get<Array<Book>>(`${Util.API_URL}categories/${id}/books/`)
+  }
 }
