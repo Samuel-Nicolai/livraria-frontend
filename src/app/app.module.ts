@@ -22,6 +22,7 @@ import { from } from 'rxjs';
 import { LivroItemComponent } from './livro-item/livro-item.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryBooksComponent } from './category-books/category-books.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryBooksComponent } from './category-books/category-books.componen
     ToolbarComponent,
     LivroItemComponent,
     HomeComponent,
-    CategoryBooksComponent
+    CategoryBooksComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,

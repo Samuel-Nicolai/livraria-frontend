@@ -1,5 +1,11 @@
 # Frontend
 
+## Observações importantes
+
+- Quando o vscode acusar o erro de workspace muito grande, para continuar usando o autoreload rodar: `sudo sysctl fs.inotify.max_user_watches=524288` e `sudo sysctl -p --system`. 
+
+- Veificar se o sistema nao renomeou .ENV para ENV
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
 
 ## Development server
