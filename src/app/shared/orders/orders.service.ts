@@ -15,4 +15,14 @@ export class OrdersService {
   getOrders() {
     return this.http.get<Array<Orders>>(`${Util.API_URL}orders/`)
   }
+
+ /*
+ addHero (hero: Hero): Observable<Hero> {
+  return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
+    .pipe(
+      catchError(this.handleError('addHero', hero))
+    );
+}
+*/
+
 }

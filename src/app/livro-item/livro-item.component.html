@@ -15,6 +15,6 @@
         </mat-grid-list>
     </mat-card-content>
     <mat-card-actions class="align">
-        <button mat-raised-button color="primary">Visualizar</button>
+        <button [routerLink] = '["/cart", {id: book.ISBN}]' mat-raised-button color="primary">Visualizar</button>
     </mat-card-actions>
 </mat-card>

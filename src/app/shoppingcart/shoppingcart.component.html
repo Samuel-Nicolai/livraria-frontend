@@ -1,1 +1,7 @@
-<p>shoppingcart works!</p>
+<button (click)='clearcart()'>Limpar Carrinho</button>
+
+<mat-list *ngFor="let i of items">
+    <mat-list-item>{{i.product.title}} Quantidade: {{i.quantity}}</mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list>
+  
