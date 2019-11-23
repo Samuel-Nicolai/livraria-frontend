@@ -23,6 +23,8 @@ import { LivroItemComponent } from './livro-item/livro-item.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryBooksComponent } from './category-books/category-books.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { BookdetailsComponent } from './bookdetails/bookdetails.component';
+import { ReadmoreComponent } from './readmore/readmore.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
     LivroItemComponent,
     HomeComponent,
     CategoryBooksComponent,
-    ShoppingcartComponent
+    ShoppingcartComponent,
+    BookdetailsComponent,
+    ReadmoreComponent
   ],
   imports: [
     BrowserModule,
