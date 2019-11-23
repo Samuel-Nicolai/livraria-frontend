@@ -5,3 +5,10 @@
 .titulo {
     padding-left: 5px;
 }
+
+.search-input {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    width: 400px;
+    vertical-align: bottom;
+}

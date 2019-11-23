@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  query: string = ''
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  toSearch() {
+    this.router.navigate([`search/${this.query}`])
+    this.query = ''
+  }
 }

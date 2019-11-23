@@ -23,4 +23,8 @@ export class BookService {
   getBookCategory(id: string) {
     return this.http.get<Array<Book>>(`${Util.API_URL}categories/${id}/books/`)
   }
+
+  getBookSearch(query: string) {
+    return this.http.get<Array<Book>>(`${Util.API_URL}books/search/${query}`)
+  }
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list'
 import { MatCardModule } from '@angular/material/card'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 
 // Components imports
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -25,6 +28,7 @@ import { CategoryBooksComponent } from './category-books/category-books.componen
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { BookdetailsComponent } from './bookdetails/bookdetails.component';
 import { ReadmoreComponent } from './readmore/readmore.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +39,15 @@ import { ReadmoreComponent } from './readmore/readmore.component';
     CategoryBooksComponent,
     ShoppingcartComponent,
     BookdetailsComponent,
-    ReadmoreComponent
+    ReadmoreComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
 
     MatToolbarModule,
     MatIconModule,
@@ -50,7 +56,9 @@ import { ReadmoreComponent } from './readmore/readmore.component';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
