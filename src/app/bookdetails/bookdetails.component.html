@@ -12,7 +12,6 @@
         <div class="row">
             <div class="span8">
                 <h4><strong>{{title}}</strong></h4>
-                <h3> <strong> {{author}}</strong></h3>
             </div>
         </div>
         <!-- LZZZZZZZ -->
@@ -32,6 +31,7 @@
                      </div>
                     <div class="col-sm-3"><strong>ISBN:</strong> {{ISBN}} </div>
                     <div class="col-sm-3"><strong>Publisher:</strong> {{publisher}}</div>
+                    <div class="col-sm-3" *ngIf = "this.authors"><strong>Authors:</strong>{{getAuthors()}}</div>
                     <div class="col-sm-3"><strong>Edition:</strong> {{edition}}</div>
                     <div class="col-sm-3"><strong>Pages:</strong> {{pages}}</div>
                 </div>
