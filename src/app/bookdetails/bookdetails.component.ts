@@ -13,6 +13,13 @@ export class BookdetailsComponent implements OnInit {
  private description:  string;
  private title : string;
  private ISBN : string;
+ private author: string;
+ private price: number;
+ private pages: string
+ private publisher: string
+ private edition: string
+   
+
  
   constructor(private bookSvc: BookService,
     private activatedRoute: ActivatedRoute, ) { }
@@ -28,7 +35,10 @@ export class BookdetailsComponent implements OnInit {
           this.description = data[0].description
           this.title = data[0].title
           this.ISBN = data[0].ISBN
-
+          this.publisher = data[0].publisher
+          this.pages = data[0].pages
+          this.edition = data[0].edition
+          this.price = data[0].price
           
           
           
@@ -51,6 +61,10 @@ export class BookdetailsComponent implements OnInit {
 
   getURL(ISBN: string): string {
     return `https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/${ISBN}.01.MZZZZZZZ.jpg`
+  }
+
+  getLarge(ISBN: string): string {
+    return `https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/${ISBN}.01.LZZZZZZZ.jpg`
   }
 
 
