@@ -91,8 +91,8 @@ export class BookdetailsComponent implements OnInit {
     return `https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/${ISBN}.01.MZZZZZZZ.jpg`
   }
 
-  getLarge(ISBN: string): string {
-    return `https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/${ISBN}.01.LZZZZZZZ.jpg`
+  getLarge(ISBN: string) {
+    window.open(`https://baldochi.unifei.edu.br/COM222/trabfinal/imagens/${ISBN}.01.LZZZZZZZ.jpg`,"_blank")
   }
 
 
