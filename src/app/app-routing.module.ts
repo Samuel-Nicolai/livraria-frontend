@@ -6,6 +6,7 @@ import { CategoryBooksComponent } from './category-books/category-books.componen
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component'
 import { BookdetailsComponent } from './bookdetails/bookdetails.component'
 import { SearchComponent } from './search/search.component'
+import { DetailsComponent } from './details/details.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,8 +14,9 @@ const routes: Routes = [
   { path: 'category/:id', component: CategoryBooksComponent },
   { path: 'cart', component: ShoppingcartComponent },
   { path: 'bookdetails', component: BookdetailsComponent },
-  { path: 'search/:query', component: SearchComponent }
-];
+  { path: 'search/:query', component: SearchComponent },
+  { path: 'details/:id', component: DetailsComponent }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

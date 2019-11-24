@@ -26,4 +26,7 @@ export class LivroItemComponent implements OnInit {
       .substring(0, 300) + ' ...'
   }
 
+  getDetails(id: string): string {
+    return `/details/${id}`
+  }
 }
