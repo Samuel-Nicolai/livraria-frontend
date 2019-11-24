@@ -27,4 +27,8 @@ export class BookService {
   getBookSearch(query: string) {
     return this.http.get<Array<Book>>(`${Util.API_URL}books/search/${query}`)
   }
+
+  getBookAuthor(authorID: string) {
+    return this.http.get<Array<Book>>(`${Util.API_URL}authors/${authorID}/books/`)
+  }
 }

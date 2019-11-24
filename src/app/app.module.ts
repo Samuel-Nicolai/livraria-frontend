@@ -30,6 +30,7 @@ import { BookdetailsComponent } from './bookdetails/bookdetails.component';
 import { ReadmoreComponent } from './readmore/readmore.component';
 import { SearchComponent } from './search/search.component';
 import { DetailsComponent } from './details/details.component';
+import { AuthorsBooksComponent } from './authors-books/authors-books.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DetailsComponent } from './details/details.component';
     BookdetailsComponent,
     ReadmoreComponent,
     SearchComponent,
-    DetailsComponent
+    DetailsComponent,
+    AuthorsBooksComponent
   ],
   imports: [
     BrowserModule,

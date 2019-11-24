@@ -7,6 +7,7 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component'
 import { BookdetailsComponent } from './bookdetails/bookdetails.component'
 import { SearchComponent } from './search/search.component'
 import { DetailsComponent } from './details/details.component'
+import { AuthorsBooksComponent } from './authors-books/authors-books.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,7 +16,9 @@ const routes: Routes = [
   { path: 'cart', component: ShoppingcartComponent },
   { path: 'bookdetails', component: BookdetailsComponent },
   { path: 'search/:query', component: SearchComponent },
-  { path: 'details/:id', component: DetailsComponent }
+  { path: 'search/:query', component: SearchComponent },
+  { path: 'details/:id', component: DetailsComponent },
+  { path: 'author-books/:id', component: AuthorsBooksComponent }
 ]
 
 @NgModule({

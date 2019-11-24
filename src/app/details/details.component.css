@@ -1,0 +1,22 @@
+.details-cont {
+    margin-top: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.author-list {
+    display: inline;
+}
+
+.row {
+    display: table;
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.column {
+    display: table-cell;
+    width: auto;
+}
+table {
+    position: absolute; 
+    left: 0px;
+}

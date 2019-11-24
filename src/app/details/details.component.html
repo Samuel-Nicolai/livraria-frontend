@@ -1,1 +1,82 @@
-<p>details works!</p>
+<div class="details-cont">
+    <p class="mat-h1">{{book.title}}</p>
+    Autores:
+    <ul class="author-list" *ngFor="let a of authors">
+        <a class="mat-body" [routerLink]="toAuthorsBooks(a.AuthorID)">
+            {{a.nameL}}
+        </a>
+    </ul>
+    <br>
+    <br>
+    <mat-grid-list cols="6" rowHeight="200px">
+        <mat-grid-tile colspan="1">
+            <a (click)="getLarge(book.ISBN)">
+                <img [src]="getURL(book.ISBN)" alt="img">
+            </a>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="5">
+            <table>
+                <tr>
+                    <td>ISBN:</td>
+                    <td>{{book.ISBN}}</td>
+                </tr>
+                <tr>
+                    <td>Publisher:</td>
+                    <td>{{book.publisher}}</td>
+                </tr>
+                <tr>
+                    <td>Edition:</td>
+                    <td>{{book.edition}}</td>
+                </tr>
+                <tr>
+                    <td>Pages:</td>
+                    <td>{{book.pages}}</td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td>{{getPrice(book.price)}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button mat-flat-button color="primary">
+                            Add to cart 
+                            <mat-icon>add_shopping_cart</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!--<div class="row">
+        <div class="column">
+            <a (click)="getLarge(book.ISBN)">
+                <img [src]="getURL(book.ISBN)" alt="img">
+            </a>
+        </div>
+        <div class="column">
+            <table>
+                <tr>
+                    <td>ISBN:</td>
+                    <td>{{book.ISBN}}</td>
+                </tr>
+                <tr>
+                    <td>Publisher:</td>
+                    <td>{{book.publisher}}</td>
+                </tr>
+                <tr>
+                    <td>ISBN:</td>
+                    <td>{{book.ISBN}}</td>
+                </tr>
+                <tr>
+                    <td>ISBN:</td>
+                    <td>{{book.ISBN}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>-->
+    <br>
+    <br>
+    <div>
+        <app-readmore [text]="book.description" [maxHeight]="100"></app-readmore>
+    </div>
+</div>
