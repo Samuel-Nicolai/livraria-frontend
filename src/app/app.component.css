@@ -19,6 +19,10 @@
     overflow: auto;
 }
 
+.router-outlet {
+    min-height: calc(100vh - 64px - 94px - 20px);
+}
+
 .box {
     padding-top: 64px;
 }
@@ -34,4 +38,14 @@
     padding-right: 0px;
     padding-left: 0px;
     width: auto;
+}
+
+.footer {
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    color: #424242;
+    background-color: #eeeeee;
+    margin-top: auto;
+    padding: 5px;
 }
