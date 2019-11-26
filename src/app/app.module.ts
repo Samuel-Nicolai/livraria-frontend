@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { MatTableModule } from '@angular/material/table'
 
 // Components imports
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -26,7 +27,6 @@ import { LivroItemComponent } from './livro-item/livro-item.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryBooksComponent } from './category-books/category-books.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
-import { BookdetailsComponent } from './bookdetails/bookdetails.component';
 import { ReadmoreComponent } from './readmore/readmore.component';
 import { SearchComponent } from './search/search.component';
 import { DetailsComponent } from './details/details.component';
@@ -40,7 +40,6 @@ import { AuthorsBooksComponent } from './authors-books/authors-books.component';
     HomeComponent,
     CategoryBooksComponent,
     ShoppingcartComponent,
-    BookdetailsComponent,
     ReadmoreComponent,
     SearchComponent,
     DetailsComponent,
@@ -62,7 +61,8 @@ import { AuthorsBooksComponent } from './authors-books/authors-books.component';
     MatCardModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

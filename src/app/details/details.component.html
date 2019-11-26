@@ -38,7 +38,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <button mat-flat-button color="primary" (click)="add(book.ISBN)">
+                        <button mat-flat-button color="primary" 
+                            (click)="add(book.ISBN, book.title, book.price)">
                             Add to cart 
                             <mat-icon>add_shopping_cart</mat-icon>
                         </button>

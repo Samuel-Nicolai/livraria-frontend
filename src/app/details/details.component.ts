@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 import { Book } from '../shared/books/book'
 import { BookService } from '../shared/books/book.service'
 import { Author } from '../shared/authors/author'
 import { AuthorsService } from '../shared/authors/authors.service'
+
+import { CartService } from '../shared/cart/cart.service'
 
 @Component({
   selector: 'app-details',
@@ -12,7 +14,8 @@ import { AuthorsService } from '../shared/authors/authors.service'
   styleUrls: ['./details.component.css'],
   providers: [
     BookService,
-    AuthorsService
+    AuthorsService,
+    CartService
   ]
 })
 export class DetailsComponent implements OnInit {
@@ -26,6 +29,8 @@ export class DetailsComponent implements OnInit {
     private bookSvc: BookService,
     private authorSvc: AuthorsService,
     private route: ActivatedRoute,
+    private cartSvc: CartService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -60,5 +65,10 @@ export class DetailsComponent implements OnInit {
 
   getPrice(price: number): string {
     return `$ ${price}`
+  }
+
+  add(ISBN: string, title: string, price: number) {
+    this.cartSvc.addToCart(ISBN, title, price)
+    this.router.navigate(['/cart'])
   }
 }
