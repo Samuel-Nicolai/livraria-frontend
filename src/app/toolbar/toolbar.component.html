@@ -9,9 +9,7 @@
         <span class="example-spacer"></span>
 
         <mat-form-field class="search-input" appearance="fill">
-            <input matInput placeholder="Busque por títulos" 
-                [(ngModel)]="query"
-                (keyup.enter)="toSearch()">
+            <input matInput placeholder="Busque por títulos" [(ngModel)]="query" (keyup.enter)="toSearch()">
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
 
@@ -19,8 +17,12 @@
         <button routerLink="/cart" mat-icon-button>
             <mat-icon aria-hidden="false">shopping_cart</mat-icon>
         </button>
-        <button np mat-icon-button>
+        <button np mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon aria-hidden="false">account_circle</mat-icon>
         </button>
+        <mat-menu #menu="matMenu">
+            <button routerLink="/user" mat-menu-item>Conta</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>

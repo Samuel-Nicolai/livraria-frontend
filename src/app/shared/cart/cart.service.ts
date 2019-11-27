@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { map } from 'rxjs/operators'
 
+import { Util } from '../util'
 import { Cart } from './cart'
-import { element } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   public addToCart(ISBN: string, title: string, price: number) {
@@ -72,5 +74,25 @@ export class CartService {
     }
 
     localStorage.setItem('cart', JSON.stringify(arrCart))
+  }
+
+  createOrder(order: any) {
+    let obj = JSON.stringify(order)
+
+    console.log(order)
+
+    return this.http.post(`${Util.API_URL}orders/atomic/`, obj, {
+      headers: new HttpHeaders().append('Content-Type', 'application/json')
+    })
+    .pipe(
+      map((data) => {
+        if (data == null || data == undefined) {
+          console.log('Erro ao cadastrar order')
+          return null
+        }
+        localStorage.removeItem('cart')
+        return data
+      })
+    )
   }
 }

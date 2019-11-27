@@ -19,10 +19,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatTableModule } from '@angular/material/table'
+import { MatStepperModule } from '@angular/material/stepper'
+import { MatTabsModule } from '@angular/material/tabs'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatMenuModule } from '@angular/material/menu'
 
 // Components imports
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { from } from 'rxjs';
 import { LivroItemComponent } from './livro-item/livro-item.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryBooksComponent } from './category-books/category-books.component';
@@ -31,6 +34,8 @@ import { ReadmoreComponent } from './readmore/readmore.component';
 import { SearchComponent } from './search/search.component';
 import { DetailsComponent } from './details/details.component';
 import { AuthorsBooksComponent } from './authors-books/authors-books.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,9 @@ import { AuthorsBooksComponent } from './authors-books/authors-books.component';
     ReadmoreComponent,
     SearchComponent,
     DetailsComponent,
-    AuthorsBooksComponent
+    AuthorsBooksComponent,
+    CheckoutComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +69,11 @@ import { AuthorsBooksComponent } from './authors-books/authors-books.component';
     MatProgressBarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    MatTabsModule,
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,8 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
-  getOrders() {
-    return this.http.get<Array<Orders>>(`${Util.API_URL}orders/`)
+  getOrders(id: number) {
+    return this.http.get<Array<Orders>>(`${Util.API_URL}orders/${id}`)
   }
 
  /*

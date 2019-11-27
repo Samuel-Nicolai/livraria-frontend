@@ -1,0 +1,57 @@
+<mat-card class="carrinho">
+    <mat-card-header>
+        <mat-card-title>Checkout</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table style="width:100%; text-align: center;">
+            <tr>
+                <th>Book</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr *ngFor="let cart of arrCart">
+                <td><img [src]="getURL(cart.ISBN)" alt="cart.title"></td>
+                <td>{{cart.title}}</td>
+                <td>{{cart.price}}</td>
+                <td>
+                    {{cart.quantity}}
+                </td>
+            </tr>
+        </table>
+        <br>
+    </mat-card-content>
+
+    <span>
+        <p><strong>Total: </strong>{{getTotal()}}</p>
+    </span>
+    <mat-card-actions class="align">
+        <button routerLink="/cart" mat-raised-button>Voltar para o carrinho</button>
+    </mat-card-actions>
+</mat-card>
+
+<div *ngIf="user == null" class="carrinho">
+    <p>Você não está logado. Por favor, faça seu login para continuar.</p>
+    <button routerLink="/user" mat-raised-button>Fazer Login</button>
+</div>
+<div *ngIf="user != null" class="carrinho">
+    <p>Olá, {{user.fname}}. Confira os seus dados para finalizar a compra:</p>
+    <table style="width:100%; text-align: center;">
+        <tr>
+            <th>Rua</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>CEP</th>
+        </tr>
+        <tr>
+            <td>{{user.street}}</td>
+            <td>{{user.city}}</td>
+            <td>{{user.state}}</td>
+            <td>{{user.zip}}</td>
+        </tr>
+    </table>
+    <br>
+    <button routerLink="/user" mat-raised-button>Alterar dados</button>
+
+    <button mat-raised-button color="primary" (click)="finalizar()">Finalizar</button>
+</div>

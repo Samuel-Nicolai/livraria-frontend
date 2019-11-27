@@ -41,6 +41,7 @@
     </mat-card-content>
     <mat-card-actions class="align">
         <button routerLink="/home" mat-raised-button>Continuar comprando</button>
-        <button mat-raised-button color="primary">Concluir</button>
+        <button routerLink="/checkout" mat-raised-button color="primary"
+            [disabled]="empty ? true : false">Concluir</button>
     </mat-card-actions>
 </mat-card>

@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Util } from '../util'
 import { Book } from './book'
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

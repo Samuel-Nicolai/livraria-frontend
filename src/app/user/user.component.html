@@ -1,0 +1,144 @@
+<mat-progress-bar mode="indeterminate" class="loader" *ngIf="loading">
+</mat-progress-bar>
+<div class="carrinho">
+    <div *ngIf="!logado">
+        <p class="mat-h2">
+            Fazer login ou se cadastrar
+        </p>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <p class="mat-h3">
+                        Fazer login
+                    </p>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="E-mail" type="email" [(ngModel)]="email">
+                    </mat-form-field>
+                    <br>
+                    <button mat-raised-button (click)="login()" color="primary">Login</button>
+                </div>
+
+            </div>
+
+            <div>
+                <div>
+                    <p class="mat-h3">
+                        Cadastrar
+                    </p>
+
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nome" [(ngModel)]="user.fname">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Sobrenome" [(ngModel)]="user.lname">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="E-mail" [(ngModel)]="user.email">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Endereço" [(ngModel)]="user.street">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Cidade" [(ngModel)]="user.city">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Estado" [(ngModel)]="user.state">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="CEP" [(ngModel)]="user.zip">
+                    </mat-form-field>
+                    <br>
+
+                    <button mat-raised-button color="primary" (click)="cadastro()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="logado">
+        <mat-tab-group>
+            <mat-tab label="Perfil">
+                <div>
+                    <p class="mat-h3">
+                        Seus dados
+                    </p>
+
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nome" [(ngModel)]="user.fname">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Sobrenome" [(ngModel)]="user.lname">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="E-mail" [(ngModel)]="user.email">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Endereço" [(ngModel)]="user.street">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Cidade" [(ngModel)]="user.city">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Estado" [(ngModel)]="user.state">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="CEP" [(ngModel)]="user.zip">
+                    </mat-form-field>
+                    <br>
+
+                    <button mat-raised-button color="primary" (click)="altera()">Alterar</button>
+                </div>
+            </mat-tab>
+            <mat-tab label="Histórico de compras" (click)="getOrders()">
+                <p class="mat-h3">
+                    Compras já realizadas anteriormente
+                </p>
+                <table style="width:60%;">
+                    <tr style="text-align: left;">
+                        <th>Date</th>
+                        <th>Book</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <tr *ngFor="let h of history">
+                        <td>{{getDate(h.orderdate)}}</td>
+                        <td><img [src]="getURL(h.ISBN)"></td>
+                        <td>{{h.price}}</td>
+                        <td>
+                            {{h.qty}}
+                        </td>
+                    </tr>
+                </table>
+            </mat-tab>
+            <mat-tab label="Pendente">
+                <p class="mat-h3">
+                    Itens pendentes no checkout
+                </p>
+                <br>
+                <div *ngIf="arrCart != null">
+                    <table style="width:100%; text-align: left;">
+                        <tr>
+                            <th>Book</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                        </tr>
+                        <tr *ngFor="let cart of arrCart">
+                            <td><img [src]="getURL(cart.ISBN)" alt="cart.title"></td>
+                            <td>{{cart.title}}</td>
+                            <td>{{cart.price}}</td>
+                            <td>
+                                {{cart.quantity}}
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button routerLink="/checkout" mat-raised-button>Finalizar</button>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

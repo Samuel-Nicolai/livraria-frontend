@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Book } from '../shared/books/book'
-import { BookService } from '../shared/books/book.service'
-
 import { Cart } from '../shared/cart/cart'
 import { CartService } from '../shared/cart/cart.service'
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-shoppingcart',
   templateUrl: './shoppingcart.component.html',
   styleUrls: ['./shoppingcart.component.css'],
   providers: [
-    BookService,
     CartService
   ]
 })
@@ -23,7 +18,6 @@ export class ShoppingcartComponent implements OnInit {
   total: number = 0;
 
   constructor(
-    private bookSvc: BookService,
     private cartSvc: CartService
   ) { }
 

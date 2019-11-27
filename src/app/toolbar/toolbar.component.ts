@@ -19,4 +19,9 @@ export class ToolbarComponent implements OnInit {
     this.router.navigate([`search/${this.query}`])
     this.query = ''
   }
+
+  logout() {
+    localStorage.clear()
+    this.router.navigate([`home/`])
+  }
 }
