@@ -62,6 +62,7 @@ export class UserComponent implements OnInit {
         this.user = result
         this.logado = true
         this.loading = false
+        this.getOrders()
       },
       () => {
         alert('Erro ao efetuar login tente novamente mais tarde.')
@@ -89,6 +90,7 @@ export class UserComponent implements OnInit {
           this.user = result
           this.logado = true
           this.loading = false
+          this.getOrders()
         }
       )
     }
